@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loto App</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎲 Welcome to the Loto App</h1>
+            <% if (user) { %>
+                <div class="user-info">
+                    <p>Hello, <%= user.nickname %>!</p>
+                    <button onclick="location.href='/logout'" class="btn logout">Logout</button>
+                </div>
+            <% } else { %>
+                <button onclick="location.href='/login'" class="btn login">Login</button>
+            <% } %>
+        </header>
+
+        <% if (buyTicketLink && user) { %>
+            <div class="action-section">
+                <a href="/buy-ticket"><button class="btn primary">Buy Ticket</button></a>
+            </div>
+        <% } %>
+
+        <% if (roundCount && roundCount != 0) { %>
+            <div class="info-box">
+                <p>🎟️ Current round has <strong><%= roundCount %></strong> tickets.</p>
+            </div>
+        <% } %>
+
+        <% if (winning_numbers) { %>
+            <div class="winner-box">
+                <h2>🏆 Winning Numbers</h2>
+                <p class="numbers"><%= winning_numbers %></p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

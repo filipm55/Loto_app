@@ -1,0 +1,60 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0b132b, #1c2541, #3a506b);
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: #ffd700;
+}
+
+.ticket-card p {
+    background: rgba(255,255,255,0.05);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 1rem;
+}
+
+.ticket-card strong {
+    color: #ffd700;
+}
+
+.highlight {
+    background: rgba(255, 215, 0, 0.1);
+    border-left: 4px solid #ffd700;
+}
+
+.info-text {
+    color: #ccc;
+    font-style: italic;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #1d6fa5;
+}

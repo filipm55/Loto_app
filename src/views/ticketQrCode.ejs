@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Ticket QR</title>
+  <link rel="stylesheet" href="/styles/ticket-qr.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🎫 Your Ticket QR Code</h2>
+    <img src="<%= qrDataUrl %>" alt="QR Code" class="qr-image">
+
+    <p class="timer-text">This QR code will disappear in 30 seconds...</p>
+
+    <a href="<%= ticketURL %>" class="btn">View Ticket Details</a>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 30000);
+  </script>
+</body>
+</html>

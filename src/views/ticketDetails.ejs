@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Details</title>
+    <link rel="stylesheet" href="/styles/ticket-details.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎟️ Ticket Details</h1>
+
+        <div class="ticket-card">
+            <p><strong>Ticket ID:</strong> <%= ticket.ticket_id %></p>
+            <p><strong>Card ID:</strong> <%= ticket.card_id %></p>
+            <p><strong>Round:</strong> <%= ticket.round_id %></p>
+            <p><strong>Ticket Numbers:</strong> <%= ticket.ticket_numbers %></p>
+            <% if (ticket.winning_numbers) { %>
+                <p class="highlight"><strong>Winning Numbers:</strong> <%= ticket.winning_numbers %></p>
+            <% } else { %>
+                <p class="info-text">Winning numbers not yet drawn.</p>
+            <% } %>
+        </div>
+
+        <a href="/" class="btn">⬅ Back to Home</a>
+    </div>
+</body>
+</html>
