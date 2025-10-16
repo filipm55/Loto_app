@@ -61,5 +61,6 @@ app.use('/', ticketRoutes);
 
 
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
+    console.log(`Server running at ${process.env.BASE_URL || `http://localhost:${port}`}`);
+
 });
