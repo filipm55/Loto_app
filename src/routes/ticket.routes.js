@@ -28,7 +28,8 @@ router.get('/ticket/:id', async (req, res) => {
         const ticket = result.rows[0];
         ticket.ticket_numbers = ticket.ticket_numbers.join(' ');
         ticket.card_id = user_card_id.rows[0].card_id;
-        ticket.winning_numbers = winning_numbers.rows[0].winning_numbers;
+
+        ticket.winning_numbers = winning_numbers.rows[0].winning_numbers ? winning_numbers.rows[0].winning_numbers.join(' ') :  winning_numbers.rows[0].winning_numbers;
         res.render('ticketDetails', { ticket });
     } catch (err) {
         console.error('Error fetching ticket:', err);
