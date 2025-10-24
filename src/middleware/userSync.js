@@ -11,7 +11,6 @@ export async function syncUser(req, res, next) {
                 DO UPDATE SET nickname = EXCLUDED.nickname, email = EXCLUDED.email
             `, [user.sub, user.nickname, user.email]);
             req.userSynced = true;
-            console.log('User synced successfully!');
         } catch (err) {
             console.error('Error syncing user:', err);
         }

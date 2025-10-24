@@ -49,7 +49,7 @@ router.post('/close', checkJwt, async (req, res) => {
     }
 });
 
-router.post('/save-results', async (req, res) => {
+router.post('/save-results', checkJwt, async (req, res) => {
     const {numbers} = req.body;
     try{
         const result = await pool.query('SELECT * FROM Rounds ORDER BY round_id DESC LIMIT 1');
@@ -68,7 +68,7 @@ router.post('/save-results', async (req, res) => {
         await pool.query('UPDATE Rounds SET winning_numbers = $1 WHERE round_id = $2',
             [numbers, result.rows[0].round_id]
         );
-        res.send('Results saved');
+        res.status(204).send('No content');
     }catch(err){
         console.error('Error saving results:', err);
         return res.status(500).send('Internal Server Error');
